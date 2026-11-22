@@ -15,6 +15,8 @@ _Screenshot to be added after deployment._
 ```text
 Chaevia/
 ├── index.html
+├── achievements.html
+├── career-compass.html
 ├── 404.html
 ├── assets/
 │   ├── css/         Design tokens, base styles, and components

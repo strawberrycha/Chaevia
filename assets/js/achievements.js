@@ -1,6 +1,8 @@
 (() => {
   const filters = document.querySelector("#achievement-filters");
   const buttons = [...filters.querySelectorAll("[data-category]")];
+  const search = document.querySelector("#achievement-search");
+  const year = document.querySelector("#achievement-year");
   const highlights = document.querySelector("#highlights-only");
   const timeline = document.querySelector("#achievement-timeline");
   const achievementStatus = document.querySelector("#achievement-status");
@@ -35,13 +37,35 @@
     return item;
   }
 
+  function achievementYears(value) {
+    const years = [];
+    for (const [, start, end] of value.matchAll(/\b((?:19|20)\d{2})(?:\s*[–-]\s*((?:19|20)\d{2}))?\b/g)) {
+      for (let current = Number(start); current <= Number(end || start); current++) {
+        years.push(String(current));
+      }
+    }
+    return years;
+  }
+
   async function loadAchievements() {
     try {
       const achievements = await readData("achievements");
 
+      if (year) {
+        achievements.forEach((item) => {
+          item.years = achievementYears(`${item.when} ${item.text}`);
+        });
+        const years = [...new Set(achievements.flatMap((item) => item.years))].sort().reverse();
+        year.append(...years.map((value) => new Option(value, value)));
+      }
+
       function render() {
-        const visible = achievements.filter(({ cat, star }) =>
-          (category === "all" || cat === category) && (!highlights.checked || star)
+        const query = search?.value.trim().toLowerCase() || "";
+        const visible = achievements.filter(({ cat, star, text, when, years }) =>
+          (category === "all" || cat === category) &&
+          (!highlights?.checked || star) &&
+          (!query || `${text} ${when}`.toLowerCase().includes(query)) &&
+          (!year?.value || years.includes(year.value))
         );
         timeline.replaceChildren(...visible.map(achievementItem));
         timeline.hidden = visible.length === 0;
@@ -50,8 +74,12 @@
           : `${visible.length} ${visible.length === 1 ? "achievement" : "achievements"} shown.`;
       }
 
-      highlights.checked = true;
-      highlights.addEventListener("change", render);
+      if (highlights) {
+        highlights.checked = true;
+        highlights.addEventListener("change", render);
+      }
+      search?.addEventListener("input", render);
+      year?.addEventListener("change", render);
       buttons.forEach((button) => {
         button.addEventListener("click", () => {
           category = button.dataset.category;
@@ -83,5 +111,5 @@
   }
 
   loadAchievements();
-  loadCertificates();
+  if (certificateList) loadCertificates();
 })();
