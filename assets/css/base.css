@@ -1,0 +1,25 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 96px; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: var(--page-gradient) no-repeat, var(--bg);
+  color: var(--ink);
+  font: 1rem/1.6 var(--body);
+}
+h1, h2, p, figure { margin: 0; }
+h1, h2 { color: var(--h); }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+button { font: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.wrap { width: min(var(--content), calc(100% - 40px)); margin-inline: auto; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
