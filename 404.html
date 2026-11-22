@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Chaevia</title>
+  <base href="./">
+  <script>
+    // GitHub Pages serves this document at the missing URL, including nested URLs.
+    const path = window.location.pathname;
+    const project = "/Chaevia/";
+    const missing = path.startsWith(project) ? path.slice(project.length) : path.slice(1);
+    const depth = window.location.protocol === "file:" ? 0 : missing.split("/").length - 1;
+    document.querySelector("base").setAttribute("href", "../".repeat(depth) || "./");
+    for (const file of ["tokens.css", "base.css", "components.css"]) {
+      const stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = "assets/css/" + file;
+      document.head.append(stylesheet);
+    }
+    const icon = document.createElement("link");
+    icon.rel = "icon";
+    icon.type = "image/svg+xml";
+    icon.href = "assets/img/favicon.svg";
+    document.head.append(icon);
+    const theme = document.createElement("script");
+    theme.src = "assets/js/theme.js";
+    document.head.append(theme);
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".skip").href = new URL("#content", window.location.href).href;
+    });
+  </script>
+</head>
+<body>
+  <a class="skip button" href="#content">Skip to content</a>
+  <main class="section-inner wrap" id="content" tabindex="-1">
+    <h1>404 · Page not found</h1>
+    <div class="project-actions">
+      <a class="button primary" href="index.html">Back to Chaevia</a>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false" hidden>
+      <span aria-hidden="true"></span>
+    </button>
+  </main>
+</body>
+</html>
