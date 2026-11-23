@@ -1,4 +1,4 @@
-(() => {
+function initializeNavigation() {
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("#site-navigation");
   const mobile = matchMedia("(max-width: 819px)");
@@ -30,4 +30,10 @@
   if (document.querySelector("base")) {
     document.querySelector(".skip").href = new URL("#content", location.href);
   }
-})();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeNavigation);
+} else {
+  initializeNavigation();
+}

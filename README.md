@@ -14,10 +14,15 @@ _Screenshot to be added after deployment._
 
 ```text
 Chaevia/
-├── index.html
-├── achievements.html
-├── career-compass.html
-├── 404.html
+├── index.html         Home
+├── about.html         Biography, education, and skills
+├── projects.html      Filterable software projects
+├── career-compass.html  Career Compass case study
+├── videos.html        Video editing showcase
+├── achievements.html  Leadership and achievements
+├── experience.html    Experience and certificates
+├── contact.html       Email and social links
+├── 404.html           Custom error page
 ├── assets/
 │   ├── css/         Design tokens, base styles, and components
 │   ├── data/        Achievements, certificates, projects, and videos data scripts
@@ -32,7 +37,7 @@ The local 4K portrait in `assets/img/source/` is excluded from Git. The page use
 
 ## Run locally
 
-Open `index.html` directly in a browser. To preview over HTTP, run `python -m http.server 8000` from the project directory and open `http://localhost:8000/`.
+Open `index.html` directly in a browser. To preview the GitHub Pages paths over HTTP, run `python -m http.server 8000` from the directory containing the `Chaevia` folder, then open `http://localhost:8000/Chaevia/`. The custom error page uses `/Chaevia/` as its base on HTTP. Testing missing URLs locally requires a server that serves `404.html` for missing paths.
 
 ## Projects and Videos
 
@@ -45,6 +50,7 @@ Videos showcases video editing and multimedia production. Filter the placeholder
 - Add project screenshots to `assets/img/projects/` and list their relative paths in the project's `screenshots` array in `assets/data/projects.js`.
 - Set the project's `liveUrl` to its live demo URL.
 - Add videos in `assets/data/videos.js`. Set `poster` to the poster image path and `url` to the video URL.
+- Update achievements in `assets/data/achievements.js` and certificates in `assets/data/certificates.js`. The Home counts use the achievements and projects data.
 - Project code links are excluded by design.
 
 ## Deploy to GitHub Pages

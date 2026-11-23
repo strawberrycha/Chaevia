@@ -5,17 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <base href="/Chaevia/">
   <meta name="robots" content="noindex">
-  <script>if (location.protocol === "file:") document.querySelector("base").href = "./";</script>
+  <script>
+    if (location.protocol === "file:") document.querySelector("base").href = "./";
+
+    // Resolve local assets after choosing the base, including when opened from disk.
+    for (const name of ["tokens", "base", "components"]) {
+      const stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = "assets/css/" + name + ".css";
+      document.head.append(stylesheet);
+    }
+    const icon = document.createElement("link");
+    icon.rel = "icon";
+    icon.type = "image/svg+xml";
+    icon.href = "assets/img/favicon.svg";
+    document.head.append(icon);
+    for (const name of ["theme", "nav"]) {
+      const script = document.createElement("script");
+      script.src = "assets/js/" + name + ".js";
+      script.async = false;
+      document.head.append(script);
+    }
+  </script>
   <title>Page not found | Chaevia</title>
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/nav.js" defer></script>
+  <meta name="description" content="Page not found. Return to the Chaevia portfolio.">
+  <link rel="canonical" href="https://strawberrycha.github.io/Chaevia/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chaevia">
+  <meta property="og:title" content="Page not found | Chaevia">
+  <meta property="og:description" content="Page not found. Return to the Chaevia portfolio.">
+  <meta property="og:url" content="https://strawberrycha.github.io/Chaevia/404.html">
+  <meta property="og:image" content="https://strawberrycha.github.io/Chaevia/assets/img/cha-1200.jpg">
+  <meta property="og:image:alt" content="Charlene Mae Adille smiling in a black blazer">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Page not found | Chaevia">
+  <meta name="twitter:description" content="Page not found. Return to the Chaevia portfolio.">
+  <meta name="twitter:image" content="https://strawberrycha.github.io/Chaevia/assets/img/cha-1200.jpg">
+  <meta name="twitter:image:alt" content="Charlene Mae Adille smiling in a black blazer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@600;700&family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,800;9..144,900&amp;family=Fredoka:wght@600&display=swap">
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body id="top">
   <a class="skip button" href="#content">Skip to content</a>
