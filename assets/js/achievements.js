@@ -42,6 +42,9 @@
   function loadAchievements() {
     try {
       const achievements = window.CHAEVIA_ACHIEVEMENTS;
+      const highlightCount = achievements.filter(({ star }) => star).length;
+      document.querySelector("#achievement-summary").textContent =
+        `${highlightCount} highlights · ${achievements.length} achievements`;
 
       if (year) {
         achievements.forEach((item) => {

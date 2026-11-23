@@ -606,3 +606,16 @@ main a[href]:not(.button) { color: var(--acc); text-decoration-color: currentCol
 @media (min-width: 1024px) {
   .project-bento > .featured-project { grid-column: span 2; grid-row: span 2; }
 }
+
+.archive-filters { margin-block-end: 16px; }
+.achievement-summary { margin-block-end: 16px; }
+#achievement-timeline { gap: 24px; }
+.experience-route { margin-inline-start: 8px; }
+.experience-route .dotted-path { inset-inline-start: 0; }
+.experience-route .timeline { border: 0; margin-inline-start: 4px; }
+.experience-route .timeline li::before { inset-inline-start: -28px; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 0 16px; margin-block-start: 16px; }
+.contact-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.case-page > p + p { margin-block-start: 16px; }
+.case-page .case-study-content { padding-inline: 0; max-width: 68ch; }
+.case-page .case-study-content h2 { margin-block: 32px 8px; font-size: clamp(1.5rem, 3vw, 2rem); }
