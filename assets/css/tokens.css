@@ -17,6 +17,10 @@
   --tech-gradient: linear-gradient(100deg, #FBD3DC, #F5A1B4, #FBD3DC);
   --card-effect: 0 12px 32px rgba(133, 30, 67, .15);
   --display: Fraunces, Georgia, serif;
+  --heading: Fraunces, Georgia, serif;
+  --heading-weight: 500;
+  --heading-tracking: 0;
+  --section-space: clamp(72px, 10vw, 128px);
   --body: "DM Sans", system-ui, sans-serif;
   --script: Caveat, "Segoe Print", cursive;
   --mono: "DM Mono", ui-monospace, monospace;
@@ -40,4 +44,7 @@
   --tech-gradient: linear-gradient(100deg, #35112E, #4C1740, #35112E);
   --card-effect: 0 0 24px rgba(255, 79, 141, .28);
   --display: "Bagel Fat One", Georgia, serif;
+  --heading: Fredoka, "DM Sans", sans-serif;
+  --heading-weight: 600;
+  --heading-tracking: .01em;
 }

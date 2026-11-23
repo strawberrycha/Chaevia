@@ -6,7 +6,7 @@ body {
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   background: var(--page-gradient) no-repeat, var(--bg);
   color: var(--ink);
-  font: 1rem/1.6 var(--body);
+  font: 1.0625rem/1.65 var(--body);
 }
 h1, h2, p, figure { margin: 0; }
 h1, h2 { color: var(--h); }
