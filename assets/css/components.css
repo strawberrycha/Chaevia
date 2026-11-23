@@ -65,7 +65,6 @@
   font: 700 clamp(1rem, 3.5vw, 1.5rem)/1.35 var(--script);
 }
 .hero h1 {
-  position: relative;
   display: inline-block;
   font: 900 clamp(3rem, 13vw, 9rem)/1.05 var(--display);
   letter-spacing: -.055em;
@@ -76,13 +75,6 @@
     background-clip: text;
     color: transparent;
   }
-}
-.hero-sparkle {
-  position: absolute;
-  top: 10%;
-  left: 101%;
-  color: var(--h);
-  font: 400 clamp(.85rem, 2.4vw, 1.75rem)/1 var(--body);
 }
 .tagline { font: 700 clamp(1.5rem, 4vw, 2.4rem)/1.1 var(--script); }
 .hero-grid { display: grid; align-items: center; gap: 40px; margin-block-start: 32px; }
