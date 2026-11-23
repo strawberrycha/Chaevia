@@ -165,8 +165,8 @@
   display: grid;
   gap: 16px;
 }
-.about-copy { align-self: center; }
-.about-copy p { max-width: 46ch; }
+.about-copy { align-self: start; }
+.about-copy p { max-width: 68ch; }
 .about-copy p + p { margin-block-start: 12px; }
 .card {
   min-width: 0;
@@ -180,11 +180,6 @@
   font: var(--heading-weight) clamp(1.25rem, 2.4vw, 1.75rem)/1.2 var(--heading);
 }
 .card p + p { margin-block-start: 12px; }
-.education li + li {
-  margin-block-start: 12px;
-  padding-block-start: 12px;
-  border-block-start: 1px solid var(--edge);
-}
 .education strong, .education span { display: block; }
 .record-date {
   color: var(--mut);
