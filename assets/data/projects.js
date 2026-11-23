@@ -1,5 +1,21 @@
 window.CHAEVIA_PROJECTS = [
   {
+    "id": "career-compass",
+    "title": "Career Compass",
+    "category": "web",
+    "tags": [
+      "Next.js",
+      "Tailwind CSS",
+      "GSAP",
+      "jsPDF",
+      "Vercel"
+    ],
+    "description": "A web-based decision support system that helps Senior High School students explore college courses, built for school guidance offices.",
+    "liveUrl": "https://careercompassbu.vercel.app/",
+    "screenshots": [],
+    "featured": true
+  },
+  {
     "id": "pawfectmatch",
     "title": "PawfectMatch",
     "category": "web",

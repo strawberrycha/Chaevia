@@ -1,5 +1,6 @@
 (() => {
   const grid = document.querySelector("#project-cards");
+  const featured = grid.querySelector(".featured-project");
   const template = document.querySelector("#project-card");
   const count = document.querySelector("#project-count");
   const filters = [...document.querySelectorAll("#project-filters button")];
@@ -17,7 +18,7 @@
     card.id = project.id;
     card.querySelector("h3").textContent = project.title;
     card.querySelector(".project-description").textContent = project.description;
-    card.querySelector(".chips").append(...listItems(project.tags));
+    card.querySelector(".chips").append(...listItems(project.tags.slice(0, 4)));
     const features = card.querySelector(".project-features");
     if (project.features?.length) {
       features.hidden = false;
@@ -70,7 +71,7 @@
     const projects = window.CHAEVIA_PROJECTS.filter((project) =>
       category === "all" || project.category === category
     );
-    grid.replaceChildren(...projects.map(projectCard));
+    grid.replaceChildren(...projects.map((project) => project.featured ? featured : projectCard(project)));
     count.textContent = `${projects.length} ${projects.length === 1 ? "project" : "projects"} shown.`;
   }
 

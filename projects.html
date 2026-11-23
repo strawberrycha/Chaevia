@@ -36,15 +36,27 @@
     </div>
   </header>
   <main id="content" tabindex="-1">
-    <section class="section-inner wrap" id="projects" aria-labelledby="projects-title">
-      <h1 id="projects-title">Projects</h1>
-      <div class="featured-project-wrap">
+    <div class="page-header wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Projects</span></nav>
+      <div class="page-meta"><span class="slash-label">/projects/</span><span class="page-index">02</span></div>
+      <h1 id="page-title">Projects</h1>
+      <p>Software projects across web, mobile, and console.</p>
+    </div>
+    <section class="section-inner wrap" aria-labelledby="page-title">
+      <div id="project-filters" class="filter-buttons showcase-filters" role="group" aria-label="Project categories">
+        <button type="button" class="button secondary" data-category="all" aria-pressed="true">All</button>
+        <button type="button" class="button secondary" data-category="web" aria-pressed="false">Web</button>
+        <button type="button" class="button secondary" data-category="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" class="button secondary" data-category="console" aria-pressed="false">Console</button>
+      </div>
+      <p id="project-count" class="collection-status" role="status"></p>
+      <div id="project-cards" class="showcase-grid project-bento">
         <article class="card featured-project">
           <h3>Career Compass</h3>
           <p>A web-based decision support system that helps Senior High School students explore college courses, built for school guidance offices.</p>
           <p><strong>My role:</strong> project leader. I planned the project, designed the scoring algorithm, and built the interface, with co-researcher Juno Alligah B. Romano.</p>
           <ul class="chips" aria-label="Technology stack">
-            <li>Next.js</li><li>Tailwind CSS</li><li>GSAP</li><li>jsPDF</li><li>Vercel</li>
+            <li>Next.js</li><li>Tailwind CSS</li><li>GSAP</li><li>jsPDF</li>
           </ul>
           <ul class="project-stats" aria-label="Career Compass in numbers">
             <li><strong>85</strong> courses ranked</li>
@@ -53,38 +65,11 @@
             <li><strong>2</strong> languages plus offline mode</li>
           </ul>
           <div class="project-actions">
-            <a class="button primary" href="https://careercompassbu.vercel.app/" target="_blank" rel="noopener">Career Compass live</a>
+            <a class="button primary" href="career-compass.html">Read the case study</a>
+            <a class="button secondary" href="https://careercompassbu.vercel.app/" target="_blank" rel="noopener">Live demo</a>
           </div>
-          <a class="button secondary archive-link" href="career-compass.html">Read the full case study</a>
-          <details class="case-study">
-            <summary>Case study</summary>
-            <div class="case-study-content">
-              <h4>The problem</h4>
-              <p>Guidance is manual and paper-based, and counselors also carry a full teaching load. Students struggle to choose a college course. Of 30 respondents interviewed, 25 named limited money as the most common student problem.</p>
-              <h4>The solution</h4>
-              <p>8 interest scenarios, 15 skill statements, 4 academic steps; then top five matches with reasons, explore and compare all 85 courses, scholarship information, and a one-page PDF report. Supports both the previous and the Strengthened SHS curriculum.</p>
-              <h4>How the scoring works</h4>
-              <p>each course has fixed links to interests, skills, and academic performance; the system adds up matches and ranks all 85 courses; every course has the same number of links; the same answers always give the same ranking; rule-based weighted scoring, NOT AI; three guidance designates validated the questions and rules.</p>
-              <h4>Design decisions</h4>
-              <p>no login and no database; answers stay on the student's device (fits the Data Privacy Act of 2012); Offline Mode and English/Filipino switch came from the interviews; the journey-map interface makes it feel like exploring.</p>
-              <h4>Process and testing</h4>
-              <p>Rapid Application Development (requirements planning, user design, construction, cutover); all four component test scenarios passed; link check confirmed 15 links for each of the 85 courses.</p>
-              <h4>Results</h4>
-              <p>Reliability 4.83, functional suitability 4.77, interaction capability 4.73; overall weighted mean 4.77 (Strongly Agree).</p>
-              <h4>Limitations</h4>
-              <p>a supporting reference, not a final decision; the evaluation involved teachers and guidance designates, not students; covers only its 85 listed courses; next steps are testing with students and adding courses.</p>
-            </div>
-          </details>
         </article>
       </div>
-      <div id="project-filters" class="filter-buttons showcase-filters" role="group" aria-label="Project categories">
-        <button type="button" class="button secondary" data-category="all" aria-pressed="true">All</button>
-        <button type="button" class="button secondary" data-category="web" aria-pressed="false">Web</button>
-        <button type="button" class="button secondary" data-category="mobile" aria-pressed="false">Mobile</button>
-        <button type="button" class="button secondary" data-category="console" aria-pressed="false">Console</button>
-      </div>
-      <p id="project-count" class="collection-status" role="status"></p>
-      <div id="project-cards" class="showcase-grid"></div>
       <template id="project-card">
         <article class="card showcase-card">
           <div class="project-media"></div>
