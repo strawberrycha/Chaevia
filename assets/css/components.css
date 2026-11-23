@@ -143,8 +143,14 @@
   color: #4A2230;
   font-size: 1.4rem;
 }
+.portrait-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 16px;
+}
 .photo-pill {
-  position: absolute;
   padding: 6px 10px;
   border: 1px solid var(--edge);
   border-radius: 99px;
@@ -153,8 +159,6 @@
   font: .875rem/1.35 var(--mono);
   white-space: nowrap;
 }
-.leader { top: 20%; left: -12%; }
-.analyst { right: -12%; bottom: 12%; }
 .tech-band { border-block: 1px solid var(--edge); background: var(--tech-gradient); }
 .tech-list {
   display: flex;
