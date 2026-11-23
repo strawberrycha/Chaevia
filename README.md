@@ -20,7 +20,7 @@ Chaevia/
 ├── 404.html
 ├── assets/
 │   ├── css/         Design tokens, base styles, and components
-│   ├── data/        Achievements and certificates data scripts
+│   ├── data/        Achievements, certificates, projects, and videos data scripts
 │   ├── img/         Responsive portraits and strawberry favicon
 │   └── js/          Theme, navigation, and achievement filters
 ├── robots.txt
@@ -33,6 +33,19 @@ The local 4K portrait in `assets/img/source/` is excluded from Git. The page use
 ## Run locally
 
 Open `index.html` directly in a browser. To preview over HTTP, run `python -m http.server 8000` from the project directory and open `http://localhost:8000/`.
+
+## Projects and Videos
+
+Projects features Career Compass and a filterable grid of web, mobile, and console projects. Cards show screenshots when available and link to live demos.
+
+Videos showcases video editing and multimedia production. Filter the placeholder cards by category. Cards link to a video when its URL is available.
+
+## How to add content
+
+- Add project screenshots to `assets/img/projects/` and list their relative paths in the project's `screenshots` array in `assets/data/projects.js`.
+- Set the project's `liveUrl` to its live demo URL.
+- Add videos in `assets/data/videos.js`. Set `poster` to the poster image path and `url` to the video URL.
+- Project code links are excluded by design.
 
 ## Deploy to GitHub Pages
 
