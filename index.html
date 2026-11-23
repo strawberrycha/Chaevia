@@ -24,6 +24,8 @@
   <script src="assets/data/achievements.js" defer></script>
   <script src="assets/data/certificates.js" defer></script>
   <script src="assets/js/achievements.js" defer></script>
+  <script src="assets/data/projects.js" defer></script>
+  <script src="assets/js/projects.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@600;700&family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,800;9..144,900&display=swap">
@@ -108,7 +110,7 @@
     </section>
     <section class="section-inner wrap" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
-      <div class="projects-grid">
+      <div class="featured-project-wrap">
         <article class="card featured-project">
           <h3>Career Compass</h3>
           <p>A web-based decision support system that helps Senior High School students explore college courses, built for school guidance offices.</p>
@@ -146,21 +148,29 @@
             </div>
           </details>
         </article>
-        <article class="card">
-          <h3>PawfectMatch</h3>
-          <p>Full-stack web application. As project manager I coordinated the front-end and back-end teams, keeping delivery on schedule and communication clear.</p>
-          <ul class="chips" aria-label="Project skills">
-            <li>project management</li><li>full-stack web</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Tidyberrie</h3>
-          <p>A personal app that brings tasks, events, budget, and meal planning into one organizer.</p>
-          <ul class="chips" aria-label="Project status">
-            <li class="chip-status">in development</li>
-          </ul>
-        </article>
       </div>
+      <div id="project-filters" class="filter-buttons showcase-filters" role="group" aria-label="Project categories">
+        <button type="button" class="button secondary" data-category="all" aria-pressed="true">All</button>
+        <button type="button" class="button secondary" data-category="web" aria-pressed="false">Web</button>
+        <button type="button" class="button secondary" data-category="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" class="button secondary" data-category="console" aria-pressed="false">Console</button>
+      </div>
+      <p id="project-count" class="collection-status" role="status"></p>
+      <div id="project-cards" class="showcase-grid"></div>
+      <template id="project-card">
+        <article class="card showcase-card">
+          <div class="project-media"></div>
+          <h3></h3>
+          <ul class="chips" aria-label="Project tags"></ul>
+          <p class="project-description"></p>
+          <ul class="project-features" hidden></ul>
+          <ul class="chips" aria-label="Project status" hidden><li class="chip-status"></li></ul>
+          <div class="project-actions">
+            <a class="button primary project-live" target="_blank" rel="noopener" hidden>Live demo</a>
+            <span class="button secondary" aria-disabled="true">Live demo coming soon</span>
+          </div>
+        </article>
+      </template>
     </section>
     <section class="section-band" id="skills" aria-labelledby="skills-title">
       <div class="section-inner wrap">
