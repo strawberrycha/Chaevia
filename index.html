@@ -21,6 +21,9 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/data/achievements.js" defer></script>
+  <script src="assets/data/projects.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@600;700&family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,800;9..144,900&amp;family=Fredoka:wght@600&display=swap">
@@ -49,36 +52,75 @@
   </header>
   <main id="content" tabindex="-1">
     <section class="hero wrap" aria-labelledby="hero-title">
-      <ul class="hero-labels">
-        <li>/BSIT student/</li>
-        <li>/Data analytics/</li>
-        <li>/Cha · Strawberry/</li>
-      </ul>
-      <h1 id="hero-title"><span class="title-gradient">Chaevia</span></h1>
-      <p class="tagline">Turning data into decisions, one project at a time.</p>
       <div class="hero-grid">
         <div class="hero-copy">
-          <h2>Hi, I’m Cha, an aspiring data analyst<span class="cursor" aria-hidden="true"></span></h2>
-          <p>I’m a BSIT student at Bicol University Polangui, a project leader, and a QA-minded builder.</p>
+          <div class="hero-topline">
+            <span class="slash-label">/portfolio/</span><span class="slash-label">/2026/</span>
+            <span class="availability">Open for OJT and entry-level roles</span>
+          </div>
+          <h1 id="hero-title"><span class="title-gradient">Chaevia</span></h1>
+          <h2>Hi, I’m Cha.<span class="cursor" aria-hidden="true"></span></h2>
+          <p class="hero-subline">Aspiring data analyst · 4th-year BSIT at Bicol University Polangui</p>
+          <p>I plan, lead, and test software that people can actually use. As project leader of Career Compass, I designed the scoring system that ranks 85 college courses for Senior High School students, rated 4.77 out of 5 by 30 teachers and guidance designates.</p>
           <div class="hero-actions">
             <a class="button primary" href="projects.html">View my projects</a>
-            <a class="button secondary" href="https://github.com/strawberrycha" target="_blank" rel="noopener">GitHub</a>
-            <a class="button secondary" href="mailto:cmta2023-9135-16062@bicol-u.edu.ph">Email me</a>
+            <a class="button secondary" href="https://careercompassbu.vercel.app/" target="_blank" rel="noopener">Career Compass live</a>
+          </div>
+          <div class="hero-links">
+            <a href="https://github.com/strawberrycha" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:cmta2023-9135-16062@bicol-u.edu.ph">Email</a>
           </div>
         </div>
         <figure class="portrait">
           <div class="polaroid">
-            <img src="assets/img/cha.jpg" srcset="assets/img/cha.jpg 800w, assets/img/cha-1200.jpg 1200w" sizes="(max-width: 380px) 67vw, 260px" width="800" height="800" alt="Charlene Mae Adille smiling in a black blazer">
+            <img src="assets/img/cha.jpg" srcset="assets/img/cha.jpg 800w, assets/img/cha-1200.jpg 1200w" sizes="(max-width: 380px) 67vw, 250px" width="800" height="800" alt="Charlene Mae Adille smiling in a black blazer">
             <span class="heart" aria-hidden="true">♥</span>
           </div>
           <figcaption class="portrait-pills">
-            <span class="photo-pill">Project Leader</span>
-            <span class="photo-pill">Aspiring Data Analyst</span>
-            <span class="photo-pill">Video Editor</span>
+            <span class="photo-pill">Project Leader</span><span class="photo-pill">QA Tester</span><span class="photo-pill">Video Editor</span>
           </figcaption>
         </figure>
       </div>
+      <ul class="proof-row" aria-label="Portfolio highlights">
+        <li><strong>85</strong> courses ranked in Career Compass</li>
+        <li><strong>4.77 / 5</strong> overall rating, ISO/IEC 25010 evaluation</li>
+        <li><strong>2023</strong> student council PR officer since</li>
+      </ul>
     </section>
+    <div class="home-route path-wrap wrap">
+      <svg class="dotted-path" viewBox="0 0 8 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M4 0 V100"/></svg>
+      <section class="section-inner" aria-labelledby="selected-title">
+        <h2 id="selected-title">Selected work</h2>
+        <article class="card featured-project">
+          <h3>Career Compass</h3>
+          <p>A web-based decision support system that helps Senior High School students explore college courses, built for school guidance offices.</p>
+          <ul class="project-stats teaser-stats" aria-label="Career Compass in numbers">
+            <li><strong>85</strong> courses ranked</li>
+            <li><strong>4.77 / 5</strong> overall rating (ISO/IEC 25010)</li>
+            <li><strong>30</strong> teachers and guidance designates evaluated it</li>
+          </ul>
+          <div class="project-actions">
+            <a class="button primary" href="career-compass.html">View case study</a>
+            <a class="button secondary" href="https://careercompassbu.vercel.app/" target="_blank" rel="noopener">Live demo</a>
+            <a class="button" href="projects.html">See all projects</a>
+          </div>
+        </article>
+      </section>
+      <section class="section-inner" aria-labelledby="tour-title">
+        <h2 id="tour-title">Quick tour</h2>
+        <ul class="tour-grid">
+          <li><a class="card" href="about.html"><strong>About</strong><span>Who I am, where I studied, and what I work with.</span></a></li>
+          <li><a class="card" href="videos.html"><strong>Videos</strong><span>A growing reel of edits and multimedia work.</span></a></li>
+          <li><a class="card" href="achievements.html"><strong>Leadership</strong><span id="tour-achievements">Leadership and achievements</span></a></li>
+          <li><a class="card" href="experience.html"><strong>Experience</strong><span>Training, project roles, and certificates.</span></a></li>
+          <li><a class="card" href="projects.html"><strong>Projects</strong><span id="tour-projects">Web, mobile, and console projects</span></a></li>
+        </ul>
+      </section>
+      <section class="section-inner" aria-labelledby="closing-title">
+        <h2 id="closing-title">Let’s connect.</h2>
+        <div class="project-actions"><a class="button primary" href="mailto:cmta2023-9135-16062@bicol-u.edu.ph">Email</a><a class="button secondary" href="contact.html">Contact</a></div>
+      </section>
+    </div>
   </main>
   <footer class="site-footer wrap">
     <div class="footer-columns">
