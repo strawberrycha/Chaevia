@@ -20,7 +20,7 @@ Chaevia/
 ├── 404.html
 ├── assets/
 │   ├── css/         Design tokens, base styles, and components
-│   ├── data/        Achievements and certificates JSON
+│   ├── data/        Achievements and certificates data scripts
 │   ├── img/         Responsive portraits and strawberry favicon
 │   └── js/          Theme, navigation, and achievement filters
 ├── robots.txt
@@ -32,7 +32,7 @@ The local 4K portrait in `assets/img/source/` is excluded from Git. The page use
 
 ## Run locally
 
-From the project directory, run `python -m http.server 8000` and open `http://localhost:8000/`. Serving over HTTP allows the achievements and certificates JSON files to load.
+Open `index.html` directly in a browser. To preview over HTTP, run `python -m http.server 8000` from the project directory and open `http://localhost:8000/`.
 
 ## Deploy to GitHub Pages
 

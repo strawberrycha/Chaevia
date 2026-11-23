@@ -1,4 +1,4 @@
-[
+window.CHAEVIA_ACHIEVEMENTS = [
 {"cat":"college","star":true,"text":"Senior Counselor, Public Relations Auxiliary Counselor, College Student Council (first-ever in 2023–2024; continued through 2026–2027)","when":"Bicol University Polangui"},
 {"cat":"college","star":false,"text":"Ambassadress, National Service Training Program","when":"2023–2024"},
 {"cat":"college","star":false,"text":"Vice Chairman, Public Relations Committee, Representatives Assembly","when":"2023–2024"},
@@ -36,4 +36,4 @@
 {"cat":"public","star":false,"text":"Miss Teen Balogo 2018, Top 5 finalist","when":""},
 {"cat":"public","star":false,"text":"Ms. Youth Fluential, Balogo National High School representative","when":""},
 {"cat":"public","star":false,"text":"Ms. BNHS Camp","when":"Grade 8 · AY 2018–2019"}
-]
+];

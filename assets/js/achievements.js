@@ -10,12 +10,6 @@
   const certificateStatus = document.querySelector("#certificate-status");
   let category = "all";
 
-  async function readData(filename) {
-    const response = await fetch(`assets/data/${filename}.json`);
-    if (!response.ok) throw new Error(`Could not load ${filename}`);
-    return response.json();
-  }
-
   function textElement(tag, text, className = "") {
     const element = document.createElement(tag);
     element.textContent = text;
@@ -47,9 +41,9 @@
     return years;
   }
 
-  async function loadAchievements() {
+  function loadAchievements() {
     try {
-      const achievements = await readData("achievements");
+      const achievements = window.CHAEVIA_ACHIEVEMENTS;
 
       if (year) {
         achievements.forEach((item) => {
@@ -96,9 +90,9 @@
     }
   }
 
-  async function loadCertificates() {
+  function loadCertificates() {
     try {
-      const certificates = await readData("certificates");
+      const certificates = window.CHAEVIA_CERTIFICATES;
       certificateList.replaceChildren(...certificates.map(({ title, issuer }) => {
         const item = document.createElement("li");
         item.className = "card";

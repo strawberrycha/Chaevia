@@ -1,4 +1,4 @@
-[
+window.CHAEVIA_CERTIFICATES = [
   {
     "title": "Mastering Excel Dashboard",
     "issuer": "Koenig"
@@ -27,4 +27,4 @@
     "title": "Soar High: Freelancing Like a Business (Contracts, taxes, and getting paid right)",
     "issuer": ""
   }
-]
+];
