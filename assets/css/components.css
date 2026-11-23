@@ -474,3 +474,79 @@
 @media (min-width: 1024px) {
   .showcase-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+.editor-timeline {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  margin-block: 24px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  background: var(--surf);
+}
+.editor-track { display: grid; grid-template-columns: 3fr 2fr 4fr; gap: 6px; }
+.editor-track + .editor-track { grid-template-columns: 2fr 5fr 3fr; }
+.editor-track span { height: 10px; border-radius: 10px; background: var(--pink); }
+.editor-track span:nth-child(2) { background: var(--acc); }
+.editor-track + .editor-track span:nth-child(odd) { background: var(--yel); }
+.editor-timeline::after {
+  position: absolute;
+  inset: 0 auto 0 8%;
+  width: 2px;
+  background: var(--ink);
+  animation: editor-sweep 10s ease-in-out infinite alternate;
+  content: "";
+}
+@keyframes editor-sweep { to { left: 92%; } }
+.video-grid { margin-block-start: 16px; align-items: start; }
+.video-card { align-items: start; }
+.video-card .project-actions:has([hidden]) { display: none; }
+.video-poster {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  border-radius: 16px;
+  background: linear-gradient(140deg, var(--surf), var(--band), var(--pink));
+}
+.video-poster-portrait {
+  justify-self: center;
+  align-self: center;
+  width: min(100%, 180px);
+  aspect-ratio: 9 / 16;
+}
+.video-poster img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+.video-play {
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--edge);
+  border-radius: 50%;
+  background: var(--surf);
+  color: var(--ink);
+}
+.video-play::before {
+  margin-inline-start: 4px;
+  border-block: 8px solid transparent;
+  border-inline-start: 12px solid currentColor;
+  content: "";
+}
+.video-duration {
+  position: absolute;
+  inset: auto 8px 8px auto;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--surf);
+  color: var(--ink);
+  font: .875rem/1.5 var(--mono);
+}
+@media (prefers-reduced-motion: reduce) {
+  .editor-timeline::after { animation: none; }
+}

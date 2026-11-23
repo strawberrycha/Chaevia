@@ -26,6 +26,8 @@
   <script src="assets/js/achievements.js" defer></script>
   <script src="assets/data/projects.js" defer></script>
   <script src="assets/js/projects.js" defer></script>
+  <script src="assets/data/videos.js" defer></script>
+  <script src="assets/js/videos.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@600;700&family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,800;9..144,900&display=swap">
@@ -42,6 +44,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#videos">Videos</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#leadership">Leadership</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -168,6 +171,38 @@
           <div class="project-actions">
             <a class="button primary project-live" target="_blank" rel="noopener" hidden>Live demo</a>
             <span class="button secondary" aria-disabled="true">Live demo coming soon</span>
+          </div>
+        </article>
+      </template>
+    </section>
+    <section class="section-inner wrap" id="videos" aria-labelledby="videos-title">
+      <h2 id="videos-title">Video editing</h2>
+      <p>Beyond code, I edit videos and do multimedia production. Here is a growing reel of my work.</p>
+      <ul class="chips" aria-label="Video editing skills">
+        <li>Video editing</li><li>Multimedia production</li><li>CapCut</li>
+      </ul>
+      <div class="editor-timeline" aria-hidden="true">
+        <div class="editor-track"><span></span><span></span><span></span></div>
+        <div class="editor-track"><span></span><span></span><span></span></div>
+      </div>
+      <div id="video-filters" class="filter-buttons" role="group" aria-label="Video categories">
+        <button type="button" class="button secondary" data-category="all" aria-pressed="true">All</button>
+        <button type="button" class="button secondary" data-category="reels" aria-pressed="false">Reels and shorts</button>
+        <button type="button" class="button secondary" data-category="highlights" aria-pressed="false">Highlights and events</button>
+        <button type="button" class="button secondary" data-category="promos" aria-pressed="false">Promos and brand</button>
+      </div>
+      <p id="video-count" class="collection-status visually-hidden" role="status"></p>
+      <div id="video-cards" class="showcase-grid video-grid"></div>
+      <template id="video-card">
+        <article class="card showcase-card video-card">
+          <div class="video-poster">
+            <span class="video-play" aria-hidden="true"></span>
+            <span class="video-duration"></span>
+          </div>
+          <h3></h3>
+          <p class="video-status">Coming soon</p>
+          <div class="project-actions">
+            <a class="button primary video-watch" target="_blank" rel="noopener" hidden>Watch</a>
           </div>
         </article>
       </template>
