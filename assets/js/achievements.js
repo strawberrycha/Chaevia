@@ -6,8 +6,6 @@
   const highlights = document.querySelector("#highlights-only");
   const timeline = document.querySelector("#achievement-timeline");
   const achievementStatus = document.querySelector("#achievement-status");
-  const certificateList = document.querySelector("#certificate-list");
-  const certificateStatus = document.querySelector("#certificate-status");
   let category = "all";
 
   function textElement(tag, text, className = "") {
@@ -90,20 +88,5 @@
     }
   }
 
-  function loadCertificates() {
-    try {
-      const certificates = window.CHAEVIA_CERTIFICATES;
-      certificateList.replaceChildren(...certificates.map(({ title, issuer }) => {
-        const item = document.createElement("li");
-        item.className = "card";
-        item.append(textElement("h3", title), textElement("p", issuer || "Online course"));
-        return item;
-      }));
-    } catch {
-      certificateStatus.textContent = "Certificates could not be loaded.";
-    }
-  }
-
   loadAchievements();
-  if (certificateList) loadCertificates();
 })();

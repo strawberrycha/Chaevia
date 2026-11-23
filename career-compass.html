@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Career Compass case study | Chaevia</title>
-  <link rel="canonical" href="https://strawberrycha.github.io/Chaevia/career-compass.html">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <script src="assets/js/theme.js"></script>
+  <script src="assets/js/nav.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@600;700&family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,800;9..144,900&display=swap">
@@ -17,48 +17,78 @@
 <body id="top">
   <a class="skip button" href="#content">Skip to content</a>
   <header class="site-header wrap">
-    <div class="nav-pill archive-nav">
+    <div class="nav-pill">
       <a class="brand" href="index.html">Chaevia<span class="berry" aria-hidden="true"> 🍓</span></a>
-      <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false" hidden>
-        <span aria-hidden="true"></span>
-      </button>
+      <button class="menu-toggle button secondary" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>Menu</button>
+      <nav id="site-navigation" aria-label="Pages">
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="achievements.html">Leadership</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false" hidden><span aria-hidden="true"></span></button>
     </div>
   </header>
-  <main class="section-inner wrap archive-page" id="content" tabindex="-1">
-    <h1>Career Compass</h1>
-    <p>A web-based decision support system that helps Senior High School students explore college courses, built for school guidance offices.</p>
-    <p><strong>My role:</strong> project leader. I planned the project, designed the scoring algorithm, and built the interface, with co-researcher Juno Alligah B. Romano.</p>
-    <ul class="chips" aria-label="Technology stack">
-      <li>Next.js</li><li>Tailwind CSS</li><li>GSAP</li><li>jsPDF</li><li>Vercel</li>
-    </ul>
-    <ul class="project-stats" aria-label="Career Compass in numbers">
-      <li><strong>85</strong> courses ranked</li>
-      <li><strong>4.77 / 5</strong> overall rating (ISO/IEC 25010)</li>
-      <li><strong>30</strong> teachers and guidance designates evaluated it</li>
-      <li><strong>2</strong> languages plus offline mode</li>
-    </ul>
-    <div class="project-actions">
-      <a class="button primary" href="https://careercompassbu.vercel.app/" target="_blank" rel="noopener">Career Compass live</a>
-    </div>
-    <article class="case-study-content" aria-label="Case study">
-      <h2>The problem</h2>
-      <p>Guidance is manual and paper-based, and counselors also carry a full teaching load. Students struggle to choose a college course. Of 30 respondents interviewed, 25 named limited money as the most common student problem.</p>
-      <h2>The solution</h2>
-      <p>8 interest scenarios, 15 skill statements, 4 academic steps; then top five matches with reasons, explore and compare all 85 courses, scholarship information, and a one-page PDF report. Supports both the previous and the Strengthened SHS curriculum.</p>
-      <h2>How the scoring works</h2>
-      <p>each course has fixed links to interests, skills, and academic performance; the system adds up matches and ranks all 85 courses; every course has the same number of links; the same answers always give the same ranking; rule-based weighted scoring, NOT AI; three guidance designates validated the questions and rules.</p>
-      <h2>Design decisions</h2>
-      <p>no login and no database; answers stay on the student's device (fits the Data Privacy Act of 2012); Offline Mode and English/Filipino switch came from the interviews; the journey-map interface makes it feel like exploring.</p>
-      <h2>Process and testing</h2>
-      <p>Rapid Application Development (requirements planning, user design, construction, cutover); all four component test scenarios passed; link check confirmed 15 links for each of the 85 courses.</p>
-      <h2>Results</h2>
-      <p>Reliability 4.83, functional suitability 4.77, interaction capability 4.73; overall weighted mean 4.77 (Strongly Agree).</p>
-      <h2>Limitations</h2>
-      <p>a supporting reference, not a final decision; the evaluation involved teachers and guidance designates, not students; covers only its 85 listed courses; next steps are testing with students and adding courses.</p>
-    </article>
+  <main id="content" tabindex="-1">
+      <h1>Career Compass</h1>
+      <p>A web-based decision support system that helps Senior High School students explore college courses, built for school guidance offices.</p>
+      <p><strong>My role:</strong> project leader. I planned the project, designed the scoring algorithm, and built the interface, with co-researcher Juno Alligah B. Romano.</p>
+      <ul class="chips" aria-label="Technology stack">
+        <li>Next.js</li><li>Tailwind CSS</li><li>GSAP</li><li>jsPDF</li><li>Vercel</li>
+      </ul>
+      <ul class="project-stats" aria-label="Career Compass in numbers">
+        <li><strong>85</strong> courses ranked</li>
+        <li><strong>4.77 / 5</strong> overall rating (ISO/IEC 25010)</li>
+        <li><strong>30</strong> teachers and guidance designates evaluated it</li>
+        <li><strong>2</strong> languages plus offline mode</li>
+      </ul>
+      <div class="project-actions">
+        <a class="button primary" href="https://careercompassbu.vercel.app/" target="_blank" rel="noopener">Career Compass live</a>
+      </div>
+      <article class="case-study-content" aria-label="Case study">
+        <h2>The problem</h2>
+        <p>Guidance is manual and paper-based, and counselors also carry a full teaching load. Students struggle to choose a college course. Of 30 respondents interviewed, 25 named limited money as the most common student problem.</p>
+        <h2>The solution</h2>
+        <p>8 interest scenarios, 15 skill statements, 4 academic steps; then top five matches with reasons, explore and compare all 85 courses, scholarship information, and a one-page PDF report. Supports both the previous and the Strengthened SHS curriculum.</p>
+        <h2>How the scoring works</h2>
+        <p>each course has fixed links to interests, skills, and academic performance; the system adds up matches and ranks all 85 courses; every course has the same number of links; the same answers always give the same ranking; rule-based weighted scoring, NOT AI; three guidance designates validated the questions and rules.</p>
+        <h2>Design decisions</h2>
+        <p>no login and no database; answers stay on the student's device (fits the Data Privacy Act of 2012); Offline Mode and English/Filipino switch came from the interviews; the journey-map interface makes it feel like exploring.</p>
+        <h2>Process and testing</h2>
+        <p>Rapid Application Development (requirements planning, user design, construction, cutover); all four component test scenarios passed; link check confirmed 15 links for each of the 85 courses.</p>
+        <h2>Results</h2>
+        <p>Reliability 4.83, functional suitability 4.77, interaction capability 4.73; overall weighted mean 4.77 (Strongly Agree).</p>
+        <h2>Limitations</h2>
+        <p>a supporting reference, not a final decision; the evaluation involved teachers and guidance designates, not students; covers only its 85 listed courses; next steps are testing with students and adding courses.</p>
+      </article>
   </main>
   <footer class="site-footer wrap">
-    <p>© 2026 Chaevia · made with love and a lot of pink · <a href="#top">back to top</a></p>
+    <div class="footer-columns">
+      <div><p><strong>Chaevia</strong></p><p>Turning data into decisions, one project at a time.</p></div>
+      <nav aria-label="Footer pages">
+        <p><strong>Pages</strong></p>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="achievements.html">Leadership</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div><p><strong>Elsewhere</strong></p><ul>
+          <li><a href="mailto:cmta2023-9135-16062@bicol-u.edu.ph">Email</a></li>
+          <li><a href="https://github.com/strawberrycha" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.facebook.com/charlene.adille.3" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/itstrawberry_cha" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://tiktok.com/@charleneadille" target="_blank" rel="noopener">TikTok</a></li>
+      </ul></div>
+    </div>
+    <p class="copyright">© 2026 Chaevia · made with love and a lot of pink</p>
   </footer>
 </body>
 </html>
